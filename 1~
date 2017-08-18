@@ -1,0 +1,13 @@
+hive> create table empsal(id int,name String,sal int,unit String)
+    >  row format delimited 
+    > fields terminated by '\t';
+hive> LOAD DATA LOCAL INPATH '/home/acadgild/Downloads/Emp_Sal.txt' OVERWRITE
+    > INTO TABLE empsal;
+
+1)
+
+
+
+2)hive> SELECT name, sal, unit, avg_salary FROM ( SELECT avg(sal) OVER     
+    > (PARTITION BY unit) AS avg_salary, id, name, sal, unit FROM empsal)
+    > temp where sal>avg_salary;    

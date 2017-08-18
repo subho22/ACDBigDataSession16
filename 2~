@@ -1,0 +1,4 @@
+hive> add jar /home/acadgild/Desktop/UDFHive.jar  
+    > ;
+
+
